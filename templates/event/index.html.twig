@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>{{ 'event.list.title'|trans }}</h1>
+<p>{{ 'event.count'|trans({count: events|length}) }}</p>
+<a href="{{ path('event_new') }}">{{ 'event.create'|trans }}</a>
+<form method="get"><label>Поиск <input name="q" value="{{ query }}"></label><button>Найти</button></form>
+<ul>
+{% for event in events %}
+    <li><a href="{{ path('event_show', {id: event.id}) }}">{{ event.title }}</a> {% if event.category %}<span>{{ event.category.name }}</span>{% endif %} <time>{{ event.startsAt|date('d.m.Y H:i') }}</time><p>{{ summaries[event.id] }}</p></li>
+{% else %}
+    <li>{{ 'event.list.empty'|trans }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

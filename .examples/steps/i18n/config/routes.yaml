@@ -1,0 +1,15 @@
+events:
+    resource: ../src/Controller/EventController.php
+    type: attribute
+    prefix:
+        ru: ''
+        en: '/en'
+security:
+    resource: ../src/Controller/SecurityController.php
+    type: attribute
+hello:
+    resource: ../src/Controller/HelloController.php
+    type: attribute
+validation:
+    resource: ../src/Controller/ValidationController.php
+    type: attribute

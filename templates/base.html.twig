@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head><meta charset="UTF-8"><title>{% block title %}Афиша мероприятий{% endblock %}</title>
+<link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+</head>
+<body><nav><a href="{{ path('event_index') }}">Все мероприятия</a>{% if app.user %}<span>{{ app.user.userIdentifier }}</span>
+<a href="{{ path('event_new') }}">Добавить мероприятие</a>
+<form method="post" action="{{ path('auth_logout') }}"><input type="hidden" name="_csrf_token" value="{{ csrf_token('logout') }}"><button>Выйти</button></form>
+{% else %}<a href="{{ path('auth_login') }}">Войти</a>{% endif %}</nav>
+{% for message in app.flashes('success') %}<p role="status">{{ message }}</p>{% endfor %}
+<main>{% block body %}{% endblock %}</main></body></html>

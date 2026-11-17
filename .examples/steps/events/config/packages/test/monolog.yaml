@@ -1,0 +1,6 @@
+monolog:
+    handlers:
+        login_test:
+            type: test
+            level: info
+            channels: [app]

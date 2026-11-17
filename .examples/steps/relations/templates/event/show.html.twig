@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ event.title }}{% endblock %}
+{% block body %}
+<h1>{{ event.title }}</h1><p>{{ event.description }}</p><time>{{ event.startsAt|date('d.m.Y H:i') }}</time>
+<a href="{{ path('event_edit', {id: event.id}) }}">Редактировать</a>
+<form method="post" action="{{ path('event_delete', {id: event.id}) }}"><input type="hidden" name="_token" value="{{ csrf_token('delete-event-' ~ event.id) }}"><button>Удалить</button></form>
+{% if event.category %}<p>Категория {{ event.category.name }}</p>{% else %}<p>Без категории</p>{% endif %}
+{% endblock %}

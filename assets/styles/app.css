@@ -1,0 +1,5 @@
+body { max-width: 48rem; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif; line-height: 1.5; }
+label { display: block; margin: 0.75rem 0; }
+input, textarea, select, button { font: inherit; }
+textarea { width: 100%; min-height: 8rem; }
+form ul { color: #a00; }

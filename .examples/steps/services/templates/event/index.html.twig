@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>{{ pageTitle }}</h1>
+<form method="get"><label>Поиск <input name="q" value="{{ query }}"></label><button>Найти</button></form>
+<ul>
+{% for event in events %}
+    <li><a href="{{ path('event_show', {id: event.id}) }}">{{ event.title }}</a> <time>{{ event.startsAt|date('d.m.Y H:i') }}</time><p>{{ event.summary }}</p></li>
+{% else %}
+    <li>Мероприятия не найдены</li>
+{% endfor %}
+</ul>
+{% endblock %}

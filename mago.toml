@@ -1,0 +1,16 @@
+version = "1"
+php-version = "8.5"
+
+[source]
+paths = ["src", "tests", "migrations", "bin"]
+includes = ["vendor"]
+excludes = ["config/reference.php", ".examples"]
+
+[linter.rules.function-name]
+camel = true
+
+[linter.rules.literal-named-argument]
+enabled = false
+
+[linter.rules.too-many-methods]
+threshold = 50

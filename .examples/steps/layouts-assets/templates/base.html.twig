@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head><meta charset="UTF-8"><title>{% block title %}Афиша мероприятий{% endblock %}</title>
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('styles/app.css') }}">{% endblock %}
+</head>
+<body><nav><a href="{{ path('event_index') }}">Все мероприятия</a></nav>
+{% for message in app.flashes('success') %}<p role="status">{{ message }}</p>{% endfor %}
+<main>{% block body %}{% endblock %}</main></body></html>

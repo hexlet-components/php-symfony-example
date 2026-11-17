@@ -1,0 +1,13 @@
+parameters:
+    app.title: 'Афиша мероприятий'
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+    App\:
+        resource: '../src/'
+        exclude: '../src/{Entity,Kernel.php}'
+
+when@test:
+    parameters:
+        app.title: 'Тестовая афиша'

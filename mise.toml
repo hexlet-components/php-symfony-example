@@ -1,0 +1,25 @@
+[tools]
+betterleaks = "latest"
+hk = "2"
+jactionlint = "latest"
+lychee = "latest"
+mago = "latest"
+node = "26"
+"npm:@commitlint/cli" = "latest"
+"npm:@commitlint/config-conventional" = "latest"
+osv-scanner = "latest"
+pkl = "latest"
+rumdl = "latest"
+typos = "latest"
+
+[tasks.setup]
+description = "Установить зависимости и git-хуки"
+run = ["make setup", "hk install"]
+
+[tasks.check]
+description = "Проверить код, приложение и инфраструктуру"
+run = ["make check", "hk check --all"]
+
+[tasks.fix]
+description = "Отформатировать файлы"
+run = ["hk fix --all"]

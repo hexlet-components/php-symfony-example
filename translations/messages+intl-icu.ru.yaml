@@ -1,0 +1,9 @@
+event.list.title: Афиша мероприятий
+event.list.empty: Мероприятия не найдены
+event.title: Название
+event.field.description: Описание
+event.field.starts_at: Начало
+event.field.category: Категория
+event.save: Сохранить
+event.create: Создать мероприятие
+event.count: '{count, plural, one {# мероприятие} few {# мероприятия} many {# мероприятий} other {# мероприятия}}'

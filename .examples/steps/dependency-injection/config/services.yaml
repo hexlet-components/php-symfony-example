@@ -1,0 +1,19 @@
+parameters:
+    app.title: 'Афиша мероприятий'
+    app.summary_length: 80
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+    App\:
+        resource: '../src/'
+        exclude: '../src/{Entity,Kernel.php}'
+
+    App\Service\SummaryFormatterInterface: '@App\Service\PlainSummaryFormatter'
+    App\Service\PlainSummaryFormatter:
+        arguments:
+            $maxLength: '%app.summary_length%'
+
+when@test:
+    parameters:
+        app.title: 'Тестовая афиша'
